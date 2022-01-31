@@ -6,8 +6,8 @@
 }
 
 body {
-    background: #ffc600;
-    background: linear-gradient(to right, #D4D3DD, #ffc600);
+    background: #e43d14;
+    background: linear-gradient(to right, #D4D3DD, #e43d14);
     display: flex;
     flex-direction: column;
     align-items: center;
