@@ -1,6 +1,6 @@
 const poke_container = document.getElementById
 ('poke_container');
-const pokemons_number = 150;
+const pokemons_number = 898;
 
 const fetchPokemons = async () => {
     for (let i = 1; i <= pokemons_number; i++) {
