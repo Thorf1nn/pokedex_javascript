@@ -40,14 +40,14 @@ h1 {
 
 .pokemon .img-container {
     background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
+    border-radius: 90%;
     width: 120px;
     height: 120px;
     text-align: center;
 }
 
 .pokemon .img-container img {
-    margin-top: 20px;
+    margin-top: 10px;
     max-width: 90%;
 }
 
