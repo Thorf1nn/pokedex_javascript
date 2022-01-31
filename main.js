@@ -18,6 +18,21 @@ const colors = {
     normal: '#F5F5F5'
 };
 
+function search_pokemon() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('pokemon_display');
+
+    for (i = 0; i < x.length; i++) {
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="list-item";
+        }
+    }
+}
+
 const fetchPokemons = async () => {
     for (let i = 1; i <= pokemons_number; i++) {
         await getPokemon(i);
