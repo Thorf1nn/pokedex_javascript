@@ -22,7 +22,7 @@ const createPokemonCard = (pokemon) => {
     const type = types[0].type.name;
     const pokeInnerHTML = `
     <div class="img-container">
-        <img src="${sprites.front_default}" alt="${name}" /
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id}.png" alt="${name}" /
         >
     </div>
     <div class="info">
@@ -34,6 +34,7 @@ const createPokemonCard = (pokemon) => {
     `;
     pokemonEl.innerHTML = pokeInnerHTML;
     poke_container.appendChild(pokemonEl)
+
 }
 
 fetchPokemons();
