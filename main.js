@@ -45,11 +45,20 @@ const createPokemonCard = (pokemons, filter = "") => {
         filters = id.toString();
     }
     if (!filters.includes(filter)) return;
-    //console.log(name, filter)
     const pokemonEl = document.createElement('div');
     pokemonEl.classList.add('pokemon');
     const type = types[0].type.name;
     const color = colors[type];
+    const poke_stat = pokemons.stats.map((el) => el.stat.name);
+    const stats = poke_stat.slice(0, 3);
+    const base_value = pokemons.stats.map((el) => el.base_stat);
+    const base_stat = base_value.slice(0, 3);
+    const stat = stats.map((stat) => {
+        return `<li class="names">${stat}</li>`;
+    }).join("");
+    const base = base_stat.map((base) => {
+        return `<li class="base">${base}</li>`
+    }).join("");
 
     pokemonEl.style.backgroundColor = color;
 
@@ -61,8 +70,14 @@ const createPokemonCard = (pokemons, filter = "") => {
     <div class="info">
         <span class="number">${id}</span>
         <h3 class="name">${name}</h3>
-        <small class="type">Type: <span>${type}</span></
-        small>
+        <small class="type">Type: <span>${type}</span></small>
+    </div>
+    <div><div class="stats">
+    <h2>Stats</h2>
+    <div class=flex">
+    <ul>${stat}</ul>
+    <ul>${base}</ul>
+    </div>
     </div>
     `;
     pokemonEl.innerHTML = pokeInnerHTML;
