@@ -1,21 +1,24 @@
-# Javascript Pokedex 🎮
+# Javascript Pokedex ϞϞ(๑⚈ ․̫ ⚈๑)∩
 
 The first Innovative Epitech Hub Project
 
-<br />It's my first js project
+<br />It's my first javascipt project
 
 ## Goal 🎯
 
-The project goal is to made a pokedex in index.html page with Vanilla js.
+The project goal is to made a pokedex in js with vanilla.
 
 For this, i fetch an api : https://pokeapi.co/
 
-For the moment the pokemon names are in english but i'm going to change the name
-
 ## Usage 🕹
 
-git clone and open the index.html page
+type: 'pokemon name' in seach bar for search pokemon.
+
+type: t: 'type' in search bar for search all pokemon with this 'type'.
+
+[BETA] type: d: 'id' in search bar for search a pokemon id.
+
 
 ## Help 👋🏻
 
-Dm me in Instagram : https://www.instagram.com/lucaorelli/
+Contact me in Discord : Luca O.#7911

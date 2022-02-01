@@ -1,6 +1,6 @@
-const poke_container = document.getElementById
-('poke_container');
-const pokemons_number = 898;
+let POKEMONS = {};
+const poke_container = document.getElementById('poke_container');
+const pokemons_number = 151;
 const colors = {
     fire: '#FDDFDF',
     grass: '#DEFDE0',
@@ -18,39 +18,37 @@ const colors = {
     normal: '#F5F5F5'
 };
 
-function search_pokemon() {
-    let input = document.getElementById('searchbar').value
-    input=input.toLowerCase();
-    let x = document.getElementsByClassName('pokemon_display');
-
-    for (i = 0; i < x.length; i++) {
-        if (!x[i].innerHTML.toLowerCase().includes(input)) {
-            x[i].style.display="none";
-        }
-        else {
-            x[i].style.display="list-item";
-        }
-    }
-}
-
 const fetchPokemons = async () => {
+    poke_container.innerHTML = "";
     for (let i = 1; i <= pokemons_number; i++) {
-        await getPokemon(i);
+        elt = await getPokemon(i);
+        POKEMONS[elt.name] = elt
     }
 }
 
-const getPokemon = async id => {
+const getPokemon = async (id) => {
     const url =`https://pokeapi.co/api/v2/pokemon/${id}`;
     const res = await fetch(url);
     const pokemon = await res.json();
-    createPokemonCard(pokemon);
+    return pokemon;
 }
 
-const createPokemonCard = (pokemons) => {
+const createPokemonCard = (pokemons, filter = "") => {
+    const { id, name, types } = pokemons;
+    let filters = name;
+    if (filter.includes("t:")) {
+        filter = filter.replace('t:','');
+        filters = types[0].type.name
+    }
+    if (filter.includes("d:")) {
+        filter = filter.replace('d:','');
+        filters = id.toString();
+    }
+    if (!filters.includes(filter)) return;
+    //console.log(name, filter)
     const pokemonEl = document.createElement('div');
     pokemonEl.classList.add('pokemon');
-    const { id, name, sprites, types } = pokemons;
-    const type = types[0]. type.name;
+    const type = types[0].type.name;
     const color = colors[type];
 
     pokemonEl.style.backgroundColor = color;
@@ -72,4 +70,14 @@ const createPokemonCard = (pokemons) => {
 
 }
 
-fetchPokemons();
+const loopPokemon = (filter = "") => {
+    poke_container.innerHTML = "";
+    Object.values(POKEMONS).map(poke => createPokemonCard(poke,filter));
+}
+
+const start = async () => {
+    await fetchPokemons();
+    loopPokemon();
+}
+start();
+document.querySelector('#searchbar').oninput = async (v) => loopPokemon(v.target.value);

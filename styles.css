@@ -6,7 +6,7 @@
 }
 
 #searchbar {
-  margin-left: 0%;
+  margin-left: 1%;
   padding: 15px;
   border-radius: 10px;
 }
@@ -31,7 +31,6 @@ input[type="text"]:focus {
 }
 
 body {
-  background: #e43d14;
   background: linear-gradient(to right, #d4d3dd, #e43d14);
   display: flex;
   flex-direction: column;
