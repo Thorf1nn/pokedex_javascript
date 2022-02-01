@@ -5,6 +5,8 @@
   box-sizing: border-box;
 }
 
+/* bar de recherche */
+
 #searchbar {
   margin-left: 1%;
   padding: 15px;
@@ -28,6 +30,12 @@ input[type="text"]:focus {
 
 .pokemon_display {
   display: list-item;
+}
+
+.responsive {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
 }
 
 body {
