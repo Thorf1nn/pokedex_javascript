@@ -12,6 +12,8 @@ For this, i fetch an api : https://pokeapi.co/
 
 ## Usage 🕹
 
+Git pull the projetct and open the index.html file
+
 type: 'pokemon name' in seach bar for search pokemon.
 
 type: t: 'type' in search bar for search all pokemon with this 'type'.
