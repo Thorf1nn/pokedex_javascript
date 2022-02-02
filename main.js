@@ -63,6 +63,7 @@ const createPokemonCard = (pokemons, filter = "") => {
     pokemonEl.style.backgroundColor = color;
 
     const pokeInnerHTML = `
+    <div class="flip"><div class="front">
     <div class="img-container">
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id}.png" alt="${name}" /
         >
@@ -71,8 +72,9 @@ const createPokemonCard = (pokemons, filter = "") => {
         <span class="number">${id}</span>
         <h3 class="name">${name}</h3>
         <small class="type">Type: <span>${type}</span></small>
-    </div>
-    <div><div class="stats">
+    </div></div>
+    <div>
+    <div class="stats">
     <h2>Stats</h2>
     <div class=flex">
     <ul>${stat}</ul>
