@@ -16,6 +16,8 @@ type: 'pokemon name' in seach bar for search pokemon.
 
 type: t: 'type' in search bar for search all pokemon with this 'type'.
 
+If you put the mouse on a pokemon the stats display.
+
 [BETA] type: d: 'id' in search bar for search a pokemon id.
 
 
