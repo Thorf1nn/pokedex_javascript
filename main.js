@@ -1,6 +1,6 @@
 let POKEMONS = {};
 const poke_container = document.getElementById('poke_container');
-const pokemons_number = 151;
+const pokemons_number = 898;
 const colors = {
     fire: '#FDDFDF',
     grass: '#DEFDE0',
