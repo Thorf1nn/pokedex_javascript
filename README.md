@@ -2,11 +2,11 @@
 
 The first Innovative Epitech Hub Project
 
-<br />It's my first javascipt project
+<br />It's my first javascript project
 
 ## Goal 🎯
 
-The project goal is to made a pokedex in js with vanilla.
+The project goal is to made a pokedex in vanilla js.
 
 For this, i fetch an api : https://pokeapi.co/
 
